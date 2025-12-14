@@ -25,7 +25,7 @@ Each princess’s individuality, the challenges they faced, and the lessons they
 - Smooth scrolling for easy navigation (use of scroll bar)
 
 ### Princess Profiles
-- Detailed sections for **Cinderella, Tiana, Ariel, Rapunzel, Belle, Aurora, Jasmine**  
+- Detailed sections for **Tiana, Ariel, Rapunzel, Belle, Aurora**  
 -  Includes sections of:
   - **Biography**  
   - **Story Highlights**  
