@@ -146,7 +146,7 @@ header {
     position: relative;
     height: 360px;
     background: linear-gradient(to bottom, rgba(0,27,79,0.1), rgba(0,27,79,0.85)),
-                url("../assets/ADMUheader.png") no-repeat center/cover;
+                url("../assets/group photo.jpg") no-repeat center/cover;
     color: white;
     display: flex;
     flex-direction: column;

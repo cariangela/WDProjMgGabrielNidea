@@ -1,4 +1,4 @@
-// Princesses sparkle animation
+
 document.querySelectorAll('[data-princess]').forEach(link => {
     link.addEventListener('click', () => {
         const sparkle = document.createElement('div');
@@ -34,7 +34,6 @@ window.addEventListener('scroll', () => {
         }
     });
 });
-// Random sparkles in background
 function createSparkle() {
     const sparkle = document.createElement('div');
     sparkle.className = 'sparkle';
