@@ -57,3 +57,11 @@ nav a:hover {
 nav span {
     color:#333333;
 }
+
+.carousel {
+    position: relative;
+}
+
+.carousel-item {
+    height: 
+}
