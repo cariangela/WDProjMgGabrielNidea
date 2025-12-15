@@ -1,9 +1,96 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap');
+
+* {
     margin: 0;
-    font-family: 'Segoe UI', Helvetica, sans-serif;
-    background-image: linear-gradient(to bottom, #ffddf3, white);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(#FFDDF3, #FFFFFF);
+}
+
+.card-list .card-item .card-link {
+    width: 400px;
+    display: block;
+    background: #ffffff;
+    padding: 18px;
+    border-radius: 12px;
+    text-decoration: none;
+    border: 2px solid transparent;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
+    transition: 0.2s ease;
+}
+
+.card-list .card-item .card-link:hover {
+    border-color: #f05397;
+}
+
+.card-list .card-link .card-image {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card-list .card-link .badge {
+    color: #f05397;
+    padding: 8px 16px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin: 16px 0 18px;
+    background: #ffddf1;
+    width: fit-content;
+    border-radius: 50px;
+}
+
+.card-list .card-link .badge.ariel {
+    color: #f05353;
+    background: #ffdddd;
+}
+
+.card-list .card-link .badge.belle {
+    color: #f0c153;
+    background: #fff5dd;
+}
+
+.card-list .card-link .badge.rapunzel {
+    color: #c153f0;
+    background: #f9ddff;
+}
+
+.card-list .card-link .badge.tiana {
+    color: #56f053;
+    background: #ddffe2;
+}
+
+.card-list .card-link .card-title {
+    font-size: 1.19rem;
+    color: #000000;
+    font-weight: 600;
+}
+
+.card-list .card-link .card-button {
+    height: 35px;
+    width: 35px;
+    color: #F05397;
+    border-radius: 50%;
+    margin: 30px 0 5px;
+    background: none;
+    cursor: pointer;
+    border: 2px solid #f05397;
+    transition: 0.4s ease;
+}
+
+.card-list .card-link:hover .card-button {
+    color: #FFFFFFF;
+    background: #F05397;
+
 }
 
 .navigation {
@@ -30,7 +117,7 @@ body {
 }
 
 .nav-links {
-    margin-left: 20px;
+    margin-left: 5px;
 }
 
 .nav-links h1 {
@@ -52,16 +139,9 @@ nav a {
 
 nav a:hover {
     font-weight: bold;
+    transition: 0.2s ease;
 }
 
 nav span {
     color:#333333;
-}
-
-.carousel {
-    position: relative;
-}
-
-.carousel-item {
-    height: 
 }
