@@ -1,0 +1,204 @@
+/* Princess Sections */
+.princess-section {
+    position: relative;
+    min-height: 100vh;
+    padding: 100px 20px;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+}
+
+.princess-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: auto;
+    animation: fadeUp 1s ease forwards;
+}
+
+.princess-card img,
+.princess-img {
+    width: 300px;
+    height: auto;
+    border-radius: 20px;
+    margin-top: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.princess-img:hover {
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Video background */
+.bg-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(0.6);
+}
+
+/* Unique princess themes */
+.belle-theme { background: linear-gradient(to bottom, #f8e8d8, #fff); font-family: "Georgia", serif; }
+.rapunzel-theme { background: linear-gradient(to bottom, #fdeaff, #fff3c4); }
+.cinderella-theme { background: linear-gradient(to bottom, #e0f7fa, #ffffff); color: #004d99; }
+.aurora-theme { background: linear-gradient(to bottom, #ffe6f2, #fff0f5); color: #b30059; }
+.tiana-theme { background: linear-gradient(to bottom, #0b5d3b, #c8e6c9); color: #003300; }
+
+/* Animations */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.princess-img:hover {
+    transform: scale(1.08) rotate(2deg);
+    box-shadow: 0 15px 25px rgba(255,255,255,0.6);
+    filter: drop-shadow(0 0 15px #ffd1dc);
+}
+@media only screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .princess-section {
+        padding: 70px 15px;
+    }
+
+    .princess-content {
+        font-size: 0.9rem;
+    }
+
+    .princess-img {
+        width: 90%;
+        max-width: 250px;
+    }
+
+    .sub-nav-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Header with group photo */
+.princess-header {
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.6);
+}
+
+.princess-header h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.princess-header p {
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+/* Navigation */
+nav {
+    background: #001b4f;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0.8rem 0;
+    margin: 0;
+}
+
+.nav-menu li {
+    position: relative;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: white;
+    padding: 0.6rem 1.5rem;
+    display: block;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: 0.3s ease;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active-nav {
+    background-color: #ff69b4;
+    color: white;
+}
+
+/* Dropdown */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #001b4f;
+    display: none;
+    flex-direction: column;
+    min-width: 150px;
+    border-radius: 6px;
+    z-index: 100;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: flex;
+}
+
+.dropdown-menu li a {
+    padding: 0.6rem 1rem;
+    color: white;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #ffb6c1;
+}
+
+/* Pink background main */
+.pink-bg {
+    background: #ffe6f0;
+    padding: 3rem 1.5rem;
+}
+
+/* Princess card */
+.princess-section {
+    max-width: 900px;
+    margin: 2rem auto;
+    background-color: #fff0f5;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    padding: 2rem;
+}
+
+.princess-img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+/* Footer */
+.pink-footer {
+    background: #ffb6c1;
+    color: #330033;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 2rem;
+    font-weight: 500;
+}
+
+.pink-footer a {
+    color: #660066;
+    font-weight: 600;
+}
