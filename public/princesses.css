@@ -1,8 +1,10 @@
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to bottom, #fff7fb, #fdfcff);
+  background: linear-gradient(to bottom, #FFDDF3, #FFFFFF);
   color: #333;
   line-height: 1.8;
   margin: 0;
@@ -14,7 +16,7 @@ nav {
   justify-content: center;
   gap: 30px;
   padding: 18px;
-  background: rgba(255, 230, 240, 0.9);
+  background: #FFB5E0;
   backdrop-filter: blur(6px);
   position: sticky;
   top: 0;
@@ -37,6 +39,7 @@ nav a::after {
   bottom: -6px;
   background: #f5a6c9;
   transition: 0.3s;
+  font-weight: bold;
 }
 
 nav a:hover::after,
@@ -55,7 +58,7 @@ nav a.active::after {
 }
 
 .hero-overlay {
-  background: rgba(255, 192, 203, 0.35);
+  background: #ffb5e0;
   backdrop-filter: blur(6px);
   padding: 40px 60px;
   border-radius: 20px;
@@ -72,7 +75,7 @@ nav a.active::after {
 
 .hero-overlay p {
   font-size: 1.2rem;
-  color: #fff5fa;
+  color: white;
   margin-top: 10px;
 }
 
