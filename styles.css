@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap');
 
 * {  
     padding: 0;
@@ -11,8 +11,18 @@ body {
     background: linear-gradient(#FFDDF3, #FFFFFF);
 }
 
+/* Swiper container */
+.card-wrapper {
+    max-width: 1100px;
+    margin: 0 60px 35px;
+    padding: 20px 10px;
+    overflow: hidden;
+}
+
+/* Card */
 .card-list .card-item .card-link {
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
     display: block;
     background: #ffffff;
     padding: 18px;
@@ -21,6 +31,7 @@ body {
     border: 2px solid transparent;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
     transition: 0.2s ease;
+    margin: auto;
 }
 
 .card-list .card-item .card-link:hover {
@@ -29,7 +40,7 @@ body {
 
 .card-list .card-link .card-image {
     width: 100%;
-    aspect-ratio: 16/9;
+    aspect-ratio: 16 / 9;
     object-fit: cover;
     border-radius: 10px;
 }
@@ -88,6 +99,10 @@ body {
     background: #F05397;
 }
 
+nav {
+    margin-top: 0;
+}
+
 .navigation {
     display: flex;
     align-items: center;
@@ -96,72 +111,33 @@ body {
     width: 100%;
 }
 
-.nav-container {
-    display: flex;
-    align-items: center;
-}
-
 .logo img {
-  width: 70px;
-  height: auto;
-}
-
-.nav-links img {
     width: 70px;
-    height: 70px;
-    object-fit: contain;
 }
 
 .nav-links {
     margin-left: 15px;
 }
 
+.nav-links h1 {
+    margin: 0 0 4px 0;
+    font-size: 28px;
+    color: #333333;
+}
+
 .nav-menu {
     list-style: none;
     display: flex;
     gap: 10px;
+    margin: 0;
     padding: 0;
-    margin: 5px 0 0;
-}
-
-.nav menu li {
-    display: flex;
-    align-items: center;
 }
 
 .nav-menu a {
     text-decoration: none;
-    color: #333333;
-    font-size: 16px;
+    color: #333;
 }
 
 .nav-menu a:hover {
     font-weight: 600;
-}
-
-.nav-links h1 {
-    margin: 0;
-    font-size: 28px;
-    color: #333333;
-
-}
-
-nav {
-    margin-top: 5px;
-}
-
-nav a {
-    text-decoration: none;
-    color: #333333;
-    font-size: 16px;
-    margin: 0, 5px;
-}
-
-nav a:hover {
-    font-weight: bold;
-    transition: 0.2s ease;
-}
-
-nav span {
-    color:#333333;
 }
