@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Disney Princess Life Lessons</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Cinzel+Decorative&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: url('../assets/images/group-photo.png') no-repeat center/cover;
+  background-size: cover;
+  color: #222;
+  overflow-x: hidden;
+}
+
+
+nav {
+  display:flex; justify-content:center; gap:28px; padding:22px;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(6px);
+  border-bottom:1px solid rgba(212,175,55,0.3);
+  position: sticky; top:0; z-index:10;
+}
+nav a {
+  font-family:'Cinzel Decorative', serif;
+  color:#f5f5f5; text-decoration:none; letter-spacing:1.5px; font-size:1rem; position:relative;
+}
+nav a::after {
+  content:""; position:absolute; left:0; bottom:-6px; width:0; height:2px; background:#d4af37; transition: width 0.3s ease;
+}
+nav a:hover::after { width:100%; }
+nav a:hover, nav a.active { color:#f5d76e; font-weight:600; }
+
+
+header {
+  position: relative; height:360px;
+  background: linear-gradient(to bottom, rgba(0,27,79,0.1) 20%, rgba(0,27,79,0.85) 100%), url('assets/group-photo.png') no-repeat center/cover;
+  display:flex; flex-direction: column; align-items:center; justify-content:flex-end;
+  text-align:center; padding-bottom:50px; overflow:hidden; color:white;
+}
+header h1 { font-family: 'Cinzel Decorative', serif; font-size:2.2rem; text-shadow: 0 2px 10px rgba(0,0,0,0.4);}
+header p { font-size:1.1rem; opacity:0.9; margin-top:0.4rem; }
+
+
+.carousel-container {
+  width: 100%;
+  height: calc(100vh - 400px); /* Full page minus header */
+  position: relative;
+  display:flex; justify-content:center; align-items:center;
+  overflow:hidden;
+}
+
+
+.carousel input { display:none; }
+
+.carousel__track {
+  display:flex;
+  width:500%; 
+  height:100%;
+  transition: transform 0.6s ease;
+}
+.carousel__slide {
+  width:100%;
+  height:100%;
+  flex-shrink:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: rgba(255,255,255,0.9); 
+  border-radius:15px;
+  padding:40px; 
+  gap:40px; 
+  box-shadow:0 8px 32px rgba(0,0,0,0.25);
+}
+.carousel__slide img {
+  width:40%; 
+  max-height:80%;
+  border-radius:15px; 
+  box-shadow:0 4px 16px rgba(0,0,0,0.25);
+  object-fit:cover;
+}
+.carousel__slide .advice {
+  width:55%;
+  text-align:left; 
+  font-family:'Playfair Display', serif; 
+  font-size:1.2rem; 
+  line-height:1.6;
+  overflow-y:auto;
+  max-height:80%;
+}
+
+
+.carousel__control {
+  position:absolute; top:50%; width:50px; height:50px; cursor:pointer;
+  border-width:8px 8px 0 0; border-style:solid; border-color:#222;
+  opacity:0.6; z-index:2; transition:opacity 0.3s; transform:translateY(-50%);
+}
+.carousel__control:hover { opacity:1; }
+.carousel__control--backward { left:25px; transform:translateY(-50%) rotate(-135deg); }
+.carousel__control--forward { right:25px; transform:translateY(-50%) rotate(45deg); }
+
+.carousel__indicators {
+  position:absolute; bottom:25px; width:100%; text-align:center;
+}
+.carousel__indicator {
+  display:inline-block; width:20px; height:20px; border-radius:50%;
+  background:#222; opacity:0.4; margin:0 7px; cursor:pointer;
+}
+.carousel__indicator:hover { opacity:0.8; }
+
+
+#slide1:checked ~ .carousel__track { transform: translateX(0%); }
+#slide2:checked ~ .carousel__track { transform: translateX(-100%); }
+#slide3:checked ~ .carousel__track { transform: translateX(-200%); }
+#slide4:checked ~ .carousel__track { transform: translateX(-300%); }
+#slide5:checked ~ .carousel__track { transform: translateX(-400%); }
+
+#slide1:checked ~ .carousel__indicators label[for="slide1"],
+#slide2:checked ~ .carousel__indicators label[for="slide2"],
+#slide3:checked ~ .carousel__indicators label[for="slide3"],
+#slide4:checked ~ .carousel__indicators label[for="slide4"],
+#slide5:checked ~ .carousel__indicators label[for="slide5"] {
+  opacity:1; background:#f5d76e;
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html">Home</a>
+  <a href="princesses.html" class="active">Meet the Princesses</a>
+   <a href="lifelessons.html" class="active">Life Lessons</a>
+  <a href="games.html">Games and Quizzes</a>
+  <a href="merch.html">Merchandise</a>
+</nav>
+
+<header>
+  <h1>Disney Princess Life Lessons</h1>
+  <p>Learn valuable advice from your favorite princesses!</p>
+</header>
+
+<div class="carousel-container carousel">
+  
+  <input type="radio" name="slides" id="slide1" checked>
+  <input type="radio" name="slides" id="slide2">
+  <input type="radio" name="slides" id="slide3">
+  <input type="radio" name="slides" id="slide4">
+  <input type="radio" name="slides" id="slide5">
+
+  
+  <div class="carousel__track">
+    <div class="carousel__slide">
+      <img src="../assets/images/BELLE.jpg" alt="Belle">
+      <div class="advice">
+        <h3>Belle</h3>
+        <p>Always stay curious and never stop learning, because knowledge gives you the power to understand the world. True beauty comes from intelligence and kindness, not just appearances. Stand up for what you believe in, even if others think differently. Follow your heart, and don’t let fear or judgment stop you from chasing your dreams.</p>
+      </div>
+    </div>
+    <div class="carousel__slide">
+      <img src="../assets/images/RAPUNZEL.jpg" alt="Rapunzel">
+      <div class="advice">
+        <h3>Rapunzel</h3>
+        <p>Embrace the unknown and be willing to step outside your comfort zone. Life is full of surprises, and courage often leads to the most beautiful adventures. Trust yourself and your instincts, even when you feel uncertain. Every step you take to explore the world will help you grow stronger and wiser.</p>
+      </div>
+    </div>
+    <div class="carousel__slide">
+      <img src="../assets/images/ARIEL.webp" alt="Ariel">
+      <div class="advice">
+        <h3>Ariel</h3>
+        <p>Follow your passions, even if it means leaving what’s familiar behind. Taking risks can open doors to new opportunities and magical experiences. Listen to your heart and be brave, because true fulfillment comes from pursuing what you love. Never lose sight of who you are, even in the midst of change.</p>
+      </div>
+    </div> 
+    <div class="carousel__slide">
+      <img src="../assets/images/TIANA.webp" alt="Tiana">
+      <div class="advice">
+        <h3>Tiana</h3>
+        <p>Hard work, dedication, and patience are the keys to making your dreams come true. Believe in yourself, even when the path seems difficult or lonely. Opportunities are created through action, not just wishes, so take initiative whenever you can. Remember that perseverance and a positive attitude can overcome almost any challenge.</p>
+      </div>
+    </div>
+    <div class="carousel__slide">
+      <img src="../assets/images/AURORA.jpg" alt="Aurora">
+      <div class="advice">
+        <h3>Aurora</h3>
+        <p>Follow your passions, even if it means leaving behind what’s familiar and comfortable. Be curious about the world and brave enough to explore new experiences. Listen to your heart, because it will guide you toward what truly makes you happy. Remember that taking risks can lead to incredible growth, and staying true to yourself is the most important journey of all.</p>
+      </div>
+    </div>
+  </div>
+
+
+ 
+  <label class="carousel__control carousel__control--backward" for="slide5"></label>
+  <label class="carousel__control carousel__control--forward" for="slide2"></label>
+
+  
+  <div class="carousel__indicators">
+    <label class="carousel__indicator" for="slide1"></label>
+    <label class="carousel__indicator" for="slide2"></label>
+    <label class="carousel__indicator" for="slide3"></label>
+    <label class="carousel__indicator" for="slide4"></label>
+    <label class="carousel__indicator" for="slide5"></label>
+  </div>
+</div>
+
+</body>
+</html>
