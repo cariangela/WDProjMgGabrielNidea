@@ -1,6 +1,6 @@
 new Swiper('.card-wrapper', {
     loop: true,
-    spaceBetween: 300,
+    spaceBetween: 325,
 
     // Pagination bullets
     pagination: {
