@@ -71,8 +71,8 @@ The website will include **interactive HTML forms** to enhance user engagement a
 ---
  ## Wireframes
 
- <img src="CSQ2Proj_HomePageLogInB.png" alt="Home Page before Logging In"/>
- <img src="CSQ2Proj_LoggingIn.png" alt="Logging Into an Account"/>
- <img src="CSQ2Proj_CreatingAnAccount.png" alt="Creating an Account"/>
- <img src="CSQ2Proj_HomePageLogInA.png" alt="Home Page after Logging In"/>
- <img src="CSQ2Proj_MerchandisePurchasing.png" alt="Merchandise Purchasing"/>
+ <img src="./assets/CSQ2Proj_HomePageLogInB.png" alt="Home Page before Logging In"/>
+ <img src="./assets/CSQ2Proj_LoggingIn.png" alt="Logging Into an Account"/>
+ <img src="./assets/CSQ2Proj_CreatingAnAccount.png" alt="Creating an Account"/>
+ <img src="./assets/CSQ2Proj_HomePageLogInA.png" alt="Home Page after Logging In"/>
+ <img src="./assets/CSQ2Proj_MerchandisePurchasing.png" alt="Merchandise Purchasing"/>
