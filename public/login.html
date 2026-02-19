@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>✨ Disney Princess Login ✨</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Cinzel+Decorative&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: url('../assets/images/group-photo.png') no-repeat center/cover;
+  background-size: cover;
+  color: #222;
+  overflow-x: hidden;
+}
+
+nav {
+  display:flex; justify-content:center; gap:28px; padding:22px;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(6px);
+  border-bottom:1px solid rgba(212,175,55,0.3);
+  position: sticky; top:0; z-index:10;
+}
+nav a {
+  font-family:'Cinzel Decorative', serif;
+  color:#f5f5f5; text-decoration:none; letter-spacing:1.5px; font-size:1rem; position:relative;
+}
+nav a::after {
+  content:""; position:absolute; left:0; bottom:-6px; width:0; height:2px; background:#d4af37; transition: width 0.3s ease;
+}
+nav a:hover::after { width:100%; }
+nav a:hover, nav a.active { color:#f5d76e; font-weight:600; }
+
+.login-wrapper {
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+}
+
+.container{
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(15px);
+    border-radius:20px;
+    box-shadow:0 20px 60px rgba(0,0,0,0.4);
+    padding:40px;
+    max-width:420px;
+    width:100%;
+    text-align:center;
+    color:white;
+}
+
+h1{
+    margin-bottom:10px;
+}
+
+.subtitle{
+    margin-bottom:25px;
+    font-size:14px;
+}
+
+.form-group{
+    margin-bottom:18px;
+    text-align:left;
+}
+
+label{
+    font-weight:bold;
+    font-size:13px;
+    display:block;
+    margin-bottom:5px;
+}
+
+input, select{
+    width:100%;
+    padding:12px;
+    border-radius:10px;
+    border:none;
+    outline:none;
+}
+
+button{
+    width:100%;
+    padding:13px;
+    margin-top:15px;
+    border:none;
+    border-radius:12px;
+    font-weight:bold;
+    cursor:pointer;
+    background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+}
+
+.success-message{
+    display:none;
+    background:white;
+    color:#764ba2;
+    padding:12px;
+    border-radius:10px;
+    margin-top:15px;
+    font-weight:bold;
+}
+
+.princess-gif{
+    display:none;
+    margin-top:20px;
+    opacity:0;
+    transform:scale(0.8);
+}
+
+
+.showGif{
+    display:block !important;
+    animation:popIn 0.8s forwards;
+}
+
+.princess-gif img{
+    width:100%;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+
+@keyframes popIn{
+    from{
+        opacity:0;
+        transform:scale(0.7);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a href="../index.html">Home</a>
+  <a href="login.html" >Login</a>
+  <a href="princesses.html">Meet the Princesses</a>
+  <a href="lifelessons.html">Life Lessons</a>
+  <a href="games.html">Games</a>
+  <a href="merch.html">Merchandise</a>
+</nav>
+
+<div class="login-wrapper">
+<div class="container">
+
+<h1>👑 Disney Princess Login ✨</h1>
+<p class="subtitle">Welcome to the Magical Realm!</p>
+
+<form id="loginForm">
+
+<div class="form-group">
+<label>Your Name</label>
+<input type="text" id="name" required>
+</div>
+
+<div class="form-group">
+<label>Your Age</label>
+<input type="number" id="age" required>
+</div>
+
+<div class="form-group">
+<label>Today's Date</label>
+<input type="date" id="date" required>
+</div>
+
+<div class="form-group">
+<label>Favorite Disney Princess</label>
+<select id="princess" required>
+<option value="">Select</option>
+<option value="Belle">Belle</option>
+<option value="Ariel">Ariel</option>
+<option value="Aurora">Aurora</option>
+<option value="Rapunzel">Rapunzel</option>
+<option value="Tiana">Tiana</option>
+</select>
+</div>
+
+<button type="submit">✨ Enter the Magic ✨</button>
+
+</form>
+
+<div class="success-message" id="successMessage">
+Your magical data has been saved! 💖
+</div>
+
+<div class="princess-gif" id="gifContainer">
+<img id="princessGif" src="">
+</div>
+
+</div>
+</div>
+
+<div class="princess-gif" id="gifContainer">
+<img id="princessGif" src="">
+</div>
+
+</div>
+
+<script>
+
+document.getElementById('date').valueAsDate = new Date();
+
+document.getElementById('loginForm').addEventListener('submit', function(e){
+    e.preventDefault();
+
+    const princess = document.getElementById('princess').value;
+
+    const userData = {
+        name: document.getElementById('name').value,
+        age: document.getElementById('age').value,
+        date: document.getElementById('date').value,
+        princess: princess
+    };
+
+    localStorage.setItem('userLogin', JSON.stringify(userData));
+
+    document.getElementById('successMessage').style.display = "block";
+});
+
+document.getElementById('princess').addEventListener('change', function() {
+    const princess = this.value;
+    let gifPath = "";
+
+    if(princess === "Belle"){
+        gifPath = "../assets/videos/belle-login.gif";
+    } else if(princess === "Tiana"){
+        gifPath = "../assets/videos/tiana-login.gif";
+    } else if(princess === "Rapunzel"){
+        gifPath = "../assets/videos/rapunzel-login.gif";
+    } else if(princess === "Ariel"){
+        gifPath = "../assets/videos/ariel-login.gif";
+    } else if(princess === "Aurora"){
+        gifPath = "../assets/videos/aurora-login.gif";
+    }
+
+    /* SHOW GIF */
+    const gifImg = document.getElementById("princessGif");
+    const gifBox = document.getElementById("gifContainer");
+
+    if(gifPath !== ""){
+        gifImg.src = gifPath;
+        gifBox.classList.remove("showGif"); 
+        void gifBox.offsetWidth;   
+        gifBox.classList.add("showGif");
+    } else {
+        gifBox.classList.remove("showGif"); 
+    }
+});
+
+</script>
+</div>
+</body>
+</html>
