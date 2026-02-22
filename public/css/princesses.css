@@ -13,37 +13,52 @@ body {
 
 
 nav {
+  background: linear-gradient(to right, #001b4f, #002f9e);
+  color: white;
   display: flex;
   justify-content: center;
-  gap: 30px;
-  padding: 18px;
-  background: #FFB5E0;
+  align-items: center;
+  padding: 0.8rem 0;
   position: sticky;
   top: 0;
-  z-index: 1000; 
+  z-index: 1000;
+  backdrop-filter: blur(8px);
 }
 
 nav a {
+  color: white;
   text-decoration: none;
-  color: #b44a7d;
+  margin: 0 1.5rem;
   font-weight: 500;
+  letter-spacing: 0.5px;
   position: relative;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 nav a::after {
   content: "";
   position: absolute;
-  width: 0;
-  height: 2px;
   left: 0;
-  bottom: -6px;
-  background: #f5a6c9;
-  transition: 0.3s;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background-color: #ffdd00;
+  transition: width 0.3s ease;
 }
 
 nav a:hover::after,
 nav a.active::after {
   width: 100%;
+}
+
+nav a:hover {
+  color: #ffdd00;
+  transform: scale(1.1);
+}
+
+nav a.active {
+  color: #ffdd00;
+  font-weight: 600;
 }
 
 
