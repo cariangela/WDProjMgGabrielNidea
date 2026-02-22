@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,25 +6,68 @@
     <meta name="description" content="Mg14, GABRIEL and Mg19, NIDEA's project: The Princess Chronicles">
     <meta name="keywords" content="The Princess Chronicles, Disney, Disney princesses, princess, movies, characters, animation, Aurora, Ariel, Belle, Tiana, Rapunzel">
     <meta name="author" content="GABRIEL, Cari Angela and NIDEA, Megan Rain">
-    <link rel="icon" href="assets/wdproj_logo-nobg.png" type="image/png">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_forward" />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Cinzel+Decorative&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="css/index.css">
-    <title>The Princess Chronicles | Home</title>
+<title>The Princess Chronicles | Home</title>
+<link rel="icon" href="assets/wdproj_logo-nobg.png" type="image/png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_forward" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Cinzel+Decorative&family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+
+<link rel="stylesheet" href="css/style.css"/>
+<link rel="stylesheet" href="styles.css"/>
+<style>
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: url('../assets/images/group-photo.png') no-repeat center/cover;
+  background-size: cover;
+  color: #222;
+  overflow-x: hidden;
+}
+
+
+nav {
+  display:flex; justify-content:center; gap:28px; padding:22px;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(6px);
+  border-bottom:1px solid rgba(212,175,55,0.3);
+  position: sticky; top:0; z-index:10;
+}
+nav a {
+  font-family:'Cinzel Decorative', serif;
+  color:#f5f5f5; text-decoration:none; letter-spacing:1.5px; font-size:1rem; position:relative;
+}
+nav a::after {
+  content:""; position:absolute; left:0; bottom:-6px; width:0; height:2px; background:#d4af37; transition: width 0.3s ease;
+}
+nav a:hover::after { width:100%; }
+nav a:hover, nav a.active { color:#f5d76e; font-weight:600; }
+
+@keyframes popIn{
+    from{
+        opacity:0;
+        transform:scale(0.7);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+</style>
 </head>
+
 <body>
-<header class="navigation">
-    <nav>
-        <a href="index.html" class="active">Home</a>
-        <a href="public/login.html">Log In</a>
-        <a href="public/princesses.html">Meet the Princesses</a>
-        <a href="public/lifelessons.html">Life Lessons</a>
-        <a href="public/games.html">Games</a>
-        <a href="public/merch.html">Merchandise</a>
-    </nav>
-</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="public/login.html">Log In</a>
+  <a href="public/princesses.html">Meet the Princesses</a>
+  <a href="public/lifelessons.html">Life Lessons</a>
+  <a href="public/games.html">Games</a>
+  <a href="public/merch.html">Merchandise</a>
+</nav>
 
     <div class="container swiper">
         <div class="card-wrapper">

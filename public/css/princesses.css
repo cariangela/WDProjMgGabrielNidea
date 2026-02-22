@@ -1,94 +1,75 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to bottom, #FFDDF3, #FFFFFF);
-  color: #333;
-  line-height: 1.8;
+  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+  background: url("../assets/images/group-photo.png") no-repeat center/cover;
+  color: #222;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
-
 nav {
-  background: linear-gradient(to right, #001b4f, #002f9e);
-  color: white;
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 0.8rem 0;
+  gap: 28px;
+  padding: 22px;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(212,175,55,0.3);
   position: sticky;
   top: 0;
-  z-index: 1000;
-  backdrop-filter: blur(8px);
+  z-index: 10;
 }
 
 nav a {
-  color: white;
+  font-family: 'Cinzel Decorative', serif;
+  color: #f5f5f5;
   text-decoration: none;
-  margin: 0 1.5rem;
-  font-weight: 500;
-  letter-spacing: 0.5px;
+  letter-spacing: 1.5px;
+  font-size: 1rem;
   position: relative;
-  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 nav a::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -4px;
-  width: 0%;
+  bottom: -6px;
+  width: 0;
   height: 2px;
-  background-color: #ffdd00;
+  background: #d4af37;
   transition: width 0.3s ease;
 }
 
-nav a:hover::after,
-nav a.active::after {
+nav a:hover::after {
   width: 100%;
 }
 
-nav a:hover {
-  color: #ffdd00;
-  transform: scale(1.1);
-}
-
+nav a:hover,
 nav a.active {
-  color: #ffdd00;
+  color: #f5d76e;
   font-weight: 600;
 }
-
 
 header {
   position: relative;
   height: 360px;
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(0, 27, 79, 0.1) 20%,
-      rgba(0, 27, 79, 0.85) 100%
-    ),
-    url("../assets/images/crown.jpg") center / cover no-repeat;
+  background: linear-gradient(to bottom, rgba(0,27,79,0.1) 20%, rgba(0,27,79,0.85) 100%), url('../assets/images/group-photo.png') no-repeat center/cover;
   display: flex;
-  align-items: flex-end;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
   text-align: center;
   padding-bottom: 50px;
-  color: white;
   overflow: hidden;
-}
-
-
-.header-content {
-  max-width: 900px;
-  padding: 0 20px;
+  color: white;
 }
 
 header h1 {
-  font-family: "Cinzel Decorative", serif;
+  font-family: 'Cinzel Decorative', serif;
   font-size: 2.2rem;
   text-shadow: 0 2px 10px rgba(0,0,0,0.4);
 }
@@ -99,70 +80,21 @@ header p {
   margin-top: 0.4rem;
 }
 
-
-.fade-in {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-
-.dropdown {
-  position: relative;
-}
-
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 35px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  overflow: hidden;
-  z-index: 2000;
-}
-
-.dropdown-menu a {
-  display: block;
-  padding: 10px 20px;
-  white-space: nowrap;
-}
-
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
-
-
 .content {
-  max-width: 1400px;
-  margin: 100px auto;
-  padding: 40px;
+  max-width: 1200px;
+  margin: 2.5rem auto;
+  padding: 0 20px;
 }
-
-.content h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-  color: #d66fa1;
-  margin-bottom: 50px;
-}
-
-
 
 .princess-card {
   display: grid;
   grid-template-columns: 320px 1fr;
   gap: 20px;
-  background: rgba(255,255,255,0.85);
-  backdrop-filter: blur(8px);
+  background: rgba(255,255,255,0.9);
   border-radius: 24px;
   padding: 40px;
   margin-bottom: 80px;
-  box-shadow: 0 15px 40px rgba(214,111,161,0.18);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
   align-items: center;
   transition: transform 0.3s ease;
 }
@@ -175,17 +107,11 @@ header p {
   width: 100%;
   max-width: 320px;
   border-radius: 18px;
-  box-shadow: 0 15px 35px rgba(214,111,161,0.4);
-  transition: transform 0.4s ease;
-}
-
-.princess-img:hover {
-  transform: scale(1.05);
 }
 
 .princess-info p {
   font-size: 1.05rem;
-  line-height: 1.9;
+  line-height: 1.8;
   color: #444;
 }
 
@@ -195,11 +121,12 @@ header p {
 
 footer {
   text-align: center;
-  padding: 25px;
-  background: rgba(255,230,240,0.9);
-  color: #8a3d61;
+  padding: 1.3rem 0;
+  background: linear-gradient(to right, #001b4f, #002f9e);
+  color: white;
+  font-size: 0.95rem;
+  margin-top: 3rem;
 }
-
 
 @media (max-width: 768px) {
   header {
