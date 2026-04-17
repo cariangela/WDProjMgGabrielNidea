@@ -1,63 +1,275 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="The Princess Chronicles – Merchandise" />
-  <link rel="icon" href="../assets/wdproj_logo-nobg.png" type="image/png" />
-  <title>The Princess Chronicles | Merchandise</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/merch.css">
-</head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Princess Chronicles | Merchandise</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ================= RESET ================= */
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body {
+  font-family:'Poppins', sans-serif;
+  background: url('../assets/images/group-photo.png') center/cover no-repeat;
+  min-height:100vh;
+  color:#333;
+}
+
+/* soft overlay */
+body::before {
+  content:"";
+  position:fixed;
+  inset:0;
+  background: rgba(255,245,255,0.35);
+  backdrop-filter: blur(6px);
+  z-index:-1;
+}
+
+/* ================= NAV (FIXED) ================= */
+nav {
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  padding:16px 20px;
+
+  /* BLACK GLASS */
+  background: rgba(0,0,0,0.75);
+  backdrop-filter: blur(12px);
+
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+
+nav a {
+  font-family:'Cinzel Decorative', serif;
+  text-decoration:none;
+  color:#f5f5f5;
+  letter-spacing:2px;
+  font-size:0.95rem;
+  position:relative;
+  transition:0.3s ease;
+  padding:6px 10px;
+  border-radius:8px;
+}
+
+/* YELLOW UNDERLINE */
+nav a::after {
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:-6px;
+  width:0;
+  height:2px;
+  background:#f5d76e;
+  transform:translateX(-50%);
+  transition:0.3s ease;
+}
+
+nav a:hover {
+  color:#f5d76e;
+  transform: translateY(-2px);
+}
+
+nav a:hover::after {
+  width:100%;
+}
+
+/* ACTIVE / CLICK EFFECT */
+nav a.active {
+  background: rgba(245, 215, 110, 0.15);
+  color:#f5d76e;
+  box-shadow: 0 0 12px rgba(245,215,110,0.25);
+}
+
+/* ================= HERO ================= */
+.hero {
+  width:92%;
+  height:40vh;
+  margin:35px auto;
+  border-radius:20px;
+  overflow:hidden;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.hero::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background: url('../assets/images/group-photo.png') center/cover;
+  filter: brightness(0.85);
+}
+
+.hero-content {
+  position:relative;
+  text-align:center;
+  color:white;
+  background: rgba(0,0,0,0.45);
+  padding:28px 40px;
+  border-radius:14px;
+}
+
+.hero-content h1 {
+  font-family:'Playfair Display', serif;
+  font-size:2.3rem;
+}
+
+.hero-content p {
+  margin-top:8px;
+  opacity:0.9;
+}
+
+/* ================= SECTION ================= */
+.section {
+  max-width:1100px;
+  margin:60px auto;
+  padding:0 20px;
+}
+
+.section h2 {
+  text-align:center;
+  font-family:'Playfair Display', serif;
+  font-size:2rem;
+  margin-bottom:30px;
+  color:#3d2f44;
+}
+
+/* ================= GRID ================= */
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+  gap:25px;
+}
+
+/* ================= CARD (FIXED IMAGE ISSUE) ================= */
+.card {
+  background: rgba(255,255,255,0.6);
+  border-radius:18px;
+  overflow:hidden;
+  transition:0.3s;
+  display:flex;
+  flex-direction:column;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(245,215,110,0.2);
+}
+
+/* FIXED IMAGE (NO MORE CUTTING) */
+.card img {
+  width:100%;
+  height:220px;
+  object-fit: contain; /* IMPORTANT FIX */
+  background: #fff;
+  padding:10px;
+}
+
+/* TEXT */
+.card-content {
+  padding:18px;
+}
+
+.card-content h3 {
+  font-family:'Playfair Display', serif;
+  margin-bottom:8px;
+  color:#5a3d66;
+}
+
+.card-content p {
+  font-size:0.95rem;
+  line-height:1.6;
+  color:#444;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  text-align:center;
+  padding:20px;
+  margin-top:60px;
+  background: rgba(0,0,0,0.75);
+  color:#f5f5f5;
+}
+
+/* ================= ANIMATION ================= */
+body {
+  animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity:0; transform:translateY(10px); }
+  to { opacity:1; transform:translateY(0); }
+}
+</style>
+</head>
 
 <body>
 
 <nav>
   <a href="../index.html">Home</a>
   <a href="login.html">Login</a>
-  <a href="princesses.html">Meet the Princesses</a>
-  <a href="lifelessons.html">Life Lessons</a>
+  <a href="princesses.html">Princesses</a>
+  <a href="lifelessons.html">Lessons</a>
   <a href="games.html">Games</a>
-  <a href="merch.html" class="active">Merchandise</a>
+  <a href="merch.html" class="active">Merch</a>
 </nav>
 
-<header class="princess-hero" background="assets/group-photo.png">
-  <div class="hero-overlay">
-    <h1>BRING HOME THE MAGIC</h1>
-    <p>Purchase any of this merchandise and bring home the Disney sparkle</p>
+<header class="hero">
+  <div class="hero-content">
+    <h1>Bring Home the Magic</h1>
+    <p>Disney-inspired merchandise collection</p>
   </div>
 </header>
 
-<section class="content">
-  <h2>Kinds of Merchandise</h2>
-
+<section class="section">
   <h2>Dolls</h2>
-  <section class="character-profile">
-    <div class="character-image">
-      <img src="https://images.contentstack.io/v3/assets/bltc12136c3b9f23503/blt3191f64adfa45dc0/63b731087760ab1f00b0184b/DP_Frozen_Mailer_Front.jpg" alt="Reimagined Disney princess dolls with Ariel, Moana, Rapunzel, Tiana, Anna, and Elsa on the cover"/>
+  <div class="grid">
+    <div class="card">
+      <img src="https://images.contentstack.io/v3/assets/bltc12136c3b9f23503/blt3191f64adfa45dc0/63b731087760ab1f00b0184b/DP_Frozen_Mailer_Front.jpg">
+      <div class="card-content">
+        <h3>Princess Dolls</h3>
+        <p>Encourages creativity and storytelling through roleplay.</p>
+      </div>
     </div>
-    <div class="character-description">
-      <h3>Dolls</h3>
-      <p>Dolls are beneficial to children's creativity, empathy, social skills, and language by giving a safe area for them to play roles, practice caring, and acquire responsibility, as well as providing comfort, assisting with fine motor skills, and even preparing them for new siblings.</p>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Costumes</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="https://m.media-amazon.com/images/I/81oo0dsTetL._AC_SL1500_.jpg">
+      <div class="card-content">
+        <h3>Princess Costumes</h3>
+        <p>Boosts imagination, confidence, and expressive play.</p>
+      </div>
     </div>
-  </section>
-   <div class="character-image">
-      <img src="https://m.media-amazon.com/images/I/81oo0dsTetL._AC_SL1500_.jpg" alt="Disney princess costumes for Belle, Cinderella, Aurora, and Snow White"/>
-    </div>
-    <div class="character-description">
-      <h3>Costumes and Apparel</h3>
-      <p>Purchasing costumes for children encourages imaginative play, which is essential for the development of cognitive, social, emotional, and motor skills, allowing them to play various roles, exercise empathy, gain confidence, improve language skills, solve issues, and learn about the world in a safe, pleasant atmosphere.</p>
-    </div>
-  </section>
-    <div class="character-image">
-        <img src="https://m.media-amazon.com/images/I/71FRI-jDnrL._AC_SL1500_.jpg" alt="Funko Pops of Cinderella, Moana, Pocahontas, Rapunzel, and Snow White"/>
-     </div>
-     <div class="character-description">
+  </div>
+</section>
+
+<section class="section">
+  <h2>Collectibles</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="https://m.media-amazon.com/images/I/71FRI-jDnrL._AC_SL1500_.jpg">
+      <div class="card-content">
         <h3>Collectibles</h3>
-        <p>Buying collectibles for kids fosters important life skills like goal-setting (finishing sets), organization, patience, and financial awareness (value over time). It also boosts creativity, fosters social skills through trading and shared interests, and gives kids a sense of accomplishment and purpose, turning playtime into an organized, interesting activity with long-term significance beyond just a toy.</p>
-     </div>
+        <p>Builds patience, organization, and goal-setting skills.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <footer>
   © 2025 The Princess Chronicles
