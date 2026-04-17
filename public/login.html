@@ -1,138 +1,148 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+<!-- ================= META TAGS ================= -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Princess Chronicles | Log In</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Cinzel+Decorative&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<!-- ================= CSS ================= -->
 <style>
 
-* { margin:0; padding:0; box-sizing:border-box; }
+/* RESET */
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
+/* BODY */
 body {
   font-family: 'Poppins', sans-serif;
   background: url('../assets/images/group-photo.png') no-repeat center/cover;
-  background-size: cover;
   color: #222;
   overflow-x: hidden;
 }
 
+/* NAVBAR */
 nav {
-  display:flex; justify-content:center; gap:28px; padding:22px;
+  display:flex;
+  justify-content:center;
+  gap:28px;
+  padding:22px;
   background: rgba(0,0,0,0.7);
   backdrop-filter: blur(6px);
   border-bottom:1px solid rgba(212,175,55,0.3);
-  position: sticky; top:0; z-index:10;
+  position: sticky;
+  top:0;
 }
+
 nav a {
   font-family:'Cinzel Decorative', serif;
-  color:#f5f5f5; text-decoration:none; letter-spacing:1.5px; font-size:1rem; position:relative;
+  color:#f5f5f5;
+  text-decoration:none;
 }
-nav a::after {
-  content:""; position:absolute; left:0; bottom:-6px; width:0; height:2px; background:#d4af37; transition: width 0.3s ease;
-}
-nav a:hover::after { width:100%; }
-nav a:hover, nav a.active { color:#f5d76e; font-weight:600; }
 
+nav a.active,
+nav a:hover {
+  color:#f5d76e;
+}
+
+/* LOGIN */
 .login-wrapper {
   min-height:100vh;
   display:flex;
   justify-content:center;
   align-items:center;
-  padding:20px;
 }
 
 .container{
-    background:rgba(255,255,255,0.15);
-    backdrop-filter:blur(15px);
-    border-radius:20px;
-    box-shadow:0 20px 60px rgba(0,0,0,0.4);
-    padding:40px;
-    max-width:420px;
-    width:100%;
-    text-align:center;
-    color:white;
+  background:rgba(255,255,255,0.15);
+  backdrop-filter:blur(15px);
+  border-radius:20px;
+  box-shadow:0 20px 60px rgba(0,0,0,0.4);
+  padding:40px;
+  max-width:420px;
+  width:100%;
+  text-align:center;
+  color:white;
 }
 
-h1{
-    margin-bottom:10px;
+.subtitle {
+  margin-bottom:20px;
 }
 
-.subtitle{
-    margin-bottom:25px;
-    font-size:14px;
-}
-
+/* FORM */
 .form-group{
-    margin-bottom:18px;
-    text-align:left;
+  margin-bottom:15px;
+  text-align:left;
 }
 
 label{
-    font-weight:bold;
-    font-size:13px;
-    display:block;
-    margin-bottom:5px;
+  font-weight:bold;
+  font-size:13px;
 }
 
 input, select{
-    width:100%;
-    padding:12px;
-    border-radius:10px;
-    border:none;
-    outline:none;
+  width:100%;
+  padding:10px;
+  border-radius:10px;
+  border:none;
 }
 
+/* BUTTON */
 button{
-    width:100%;
-    padding:13px;
-    margin-top:15px;
-    border:none;
-    border-radius:12px;
-    font-weight:bold;
-    cursor:pointer;
-    background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+  width:100%;
+  padding:12px;
+  border:none;
+  border-radius:12px;
+  background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+  cursor:pointer;
+  font-weight:bold;
 }
 
+/* SUCCESS */
 .success-message{
-    display:none;
-    background:white;
-    color:#764ba2;
-    padding:12px;
-    border-radius:10px;
-    margin-top:15px;
-    font-weight:bold;
+  display:none;
+  background:white;
+  color:#764ba2;
+  padding:10px;
+  border-radius:10px;
+  margin-top:15px;
 }
 
+/* GIF */
 .princess-gif{
-    display:none;
-    margin-top:20px;
-    opacity:0;
-    transform:scale(0.8);
+  display:none;
+  margin-top:20px;
+  opacity:0;
 }
-
 
 .showGif{
-    display:block !important;
-    animation:popIn 0.8s forwards;
+  display:block;
+  animation:fadeIn 0.8s forwards;
 }
 
 .princess-gif img{
-    width:100%;
-    border-radius:15px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.4);
+  width:100%;
+  border-radius:10px;
 }
 
+/* ANIMATION */
+@keyframes fadeIn{
+  to{ opacity:1; }
+}
 
-@keyframes popIn{
-    from{
-        opacity:0;
-        transform:scale(0.7);
-    }
-    to{
-        opacity:1;
-        transform:scale(1);
-    }
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:15px;
+  font-size:12px;
+  background:#000;
+  color:#fff;
 }
 
 </style>
@@ -140,6 +150,7 @@ button{
 
 <body>
 
+<!-- ================= NAVIGATION ================= -->
 <nav>
   <a href="../index.html">Home</a>
   <a href="login.html" class="active">Log In</a>
@@ -149,6 +160,7 @@ button{
   <a href="merch.html">Merchandise</a>
 </nav>
 
+<!-- ================= LOGIN FORM ================= -->
 <div class="login-wrapper">
 <div class="container">
 
@@ -157,30 +169,34 @@ button{
 
 <form id="loginForm">
 
+<!-- NAME -->
 <div class="form-group">
 <label>Your Name</label>
 <input type="text" id="name" required>
 </div>
 
+<!-- AGE -->
 <div class="form-group">
 <label>Your Age</label>
 <input type="number" id="age" required>
 </div>
 
+<!-- DATE -->
 <div class="form-group">
 <label>Today's Date</label>
 <input type="date" id="date" required>
 </div>
 
+<!-- PERSONALITY -->
 <div class="form-group">
-<label>Favorite Disney Princess</label>
-<select id="princess" required>
+<label>How do you describe yourself?</label>
+<select id="personality" required>
 <option value="">Select</option>
-<option value="Belle">Belle</option>
-<option value="Ariel">Ariel</option>
-<option value="Aurora">Aurora</option>
-<option value="Rapunzel">Rapunzel</option>
-<option value="Tiana">Tiana</option>
+<option value="Kind">Kind & Gentle</option>
+<option value="Adventurous">Adventurous</option>
+<option value="Dreamy">Dreamy</option>
+<option value="Creative">Creative</option>
+<option value="Ambitious">Ambitious</option>
 </select>
 </div>
 
@@ -188,10 +204,12 @@ button{
 
 </form>
 
+<!-- SUCCESS MESSAGE -->
 <div class="success-message" id="successMessage">
-Your magical data has been saved! 💖
+Your magical data has been saved! You correspond to a Disney princess! 💖
 </div>
 
+<!-- GIF DISPLAY -->
 <div class="princess-gif" id="gifContainer">
 <img id="princessGif" src="">
 </div>
@@ -199,64 +217,82 @@ Your magical data has been saved! 💖
 </div>
 </div>
 
-<div class="princess-gif" id="gifContainer">
-<img id="princessGif" src="">
-</div>
+<!-- ================= FOOTER ================= -->
+<footer>
+<p>
+Images and media sourced from free-use platforms.<br>
+APA Citation Example: Disney Princess Media. (2024). Retrieved from official Disney resources.
+</p>
+</footer>
 
-</div>
-
+<!-- ================= JAVASCRIPT ================= -->
 <script>
 
+/* AUTO SET DATE */
 document.getElementById('date').valueAsDate = new Date();
 
+/* PERSONALITY → PRINCESS */
+const personalityMap = {
+    "Kind": "Belle",
+    "Adventurous": "Ariel",
+    "Dreamy": "Aurora",
+    "Creative": "Rapunzel",
+    "Ambitious": "Tiana"
+};
+
+/* PRINCESS → GIF */
+const gifMap = {
+    "Belle": "../assets/videos/belle-login.gif",
+    "Ariel": "../assets/videos/ariel-login.gif",
+    "Aurora": "../assets/videos/aurora-login.gif",
+    "Rapunzel": "../assets/videos/rapunzel-login.gif",
+    "Tiana": "../assets/videos/tiana-login.gif"
+};
+
+/* FORM SUBMIT (CREATE) */
 document.getElementById('loginForm').addEventListener('submit', function(e){
     e.preventDefault();
 
-    const princess = document.getElementById('princess').value;
+    const personality = document.getElementById('personality').value;
+    const princess = personalityMap[personality];
 
     const userData = {
         name: document.getElementById('name').value,
         age: document.getElementById('age').value,
         date: document.getElementById('date').value,
+        personality: personality,
         princess: princess
     };
 
+    /* SAVE TO LOCAL STORAGE */
     localStorage.setItem('userLogin', JSON.stringify(userData));
 
-    document.getElementById('successMessage').style.display = "block";
-});
-
-document.getElementById('princess').addEventListener('change', function() {
-    const princess = this.value;
-    let gifPath = "";
-
-    if(princess === "Belle"){
-        gifPath = "../assets/videos/belle-login.gif";
-    } else if(princess === "Tiana"){
-        gifPath = "../assets/videos/tiana-login.gif";
-    } else if(princess === "Rapunzel"){
-        gifPath = "../assets/videos/rapunzel-login.gif";
-    } else if(princess === "Ariel"){
-        gifPath = "../assets/videos/ariel-login.gif";
-    } else if(princess === "Aurora"){
-        gifPath = "../assets/videos/aurora-login.gif";
-    }
+    /* SHOW SUCCESS */
+    const successMessage = document.getElementById('successMessage');
+    successMessage.textContent = `Your magical data has been saved! Based on your ${personality.toLowerCase()} personality, you align with Princess ${princess}! 💖`;
+    successMessage.style.display = "block";
 
     /* SHOW GIF */
+    showPrincessGif(princess);
+});
+
+/* SHOW GIF FUNCTION */
+function showPrincessGif(princess){
     const gifImg = document.getElementById("princessGif");
     const gifBox = document.getElementById("gifContainer");
 
-    if(gifPath !== ""){
+    const gifPath = gifMap[princess];
+
+    if(gifPath){
         gifImg.src = gifPath;
+
         gifBox.classList.remove("showGif"); 
         void gifBox.offsetWidth;   
         gifBox.classList.add("showGif");
-    } else {
-        gifBox.classList.remove("showGif"); 
     }
-});
+}
 
 </script>
-</div>
+
 </body>
 </html>

@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -24,13 +24,55 @@ body {
   background-size: cover;
   color: #222;
   overflow-x: hidden;
+  min-height: 100vh;
 }
 
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 10, 20, 0.28);
+  pointer-events: none;
+}
+
+.page-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 16px 80px;
+}
+
+.hero {
+  max-width: 920px;
+  text-align: center;
+  margin: 20px 0 36px;
+  animation: popIn 0.8s ease;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.6rem, 5vw, 4rem);
+  color: #fff;
+  letter-spacing: 0.16rem;
+  text-shadow: 0 15px 30px rgba(0,0,0,0.35);
+  margin-bottom: 18px;
+}
+
+.hero p {
+  color: rgba(255,255,255,0.9);
+  font-size: 1.1rem;
+  line-height: 1.75;
+  max-width: 760px;
+  margin: 0 auto;
+}
 
 nav {
   display:flex; justify-content:center; gap:28px; padding:22px;
-  background: rgba(0,0,0,0.7);
-  backdrop-filter: blur(6px);
+  background: rgba(0,0,0,0.62);
+  backdrop-filter: blur(10px);
   border-bottom:1px solid rgba(212,175,55,0.3);
   position: sticky; top:0; z-index:10;
 }
@@ -43,6 +85,36 @@ nav a::after {
 }
 nav a:hover::after { width:100%; }
 nav a:hover, nav a.active { color:#f5d76e; font-weight:600; }
+
+.container.swiper {
+  background: rgba(255,255,255,0.18);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.35);
+  box-shadow: 0 28px 80px rgba(0,0,0,0.25);
+  border-radius: 30px;
+  padding: 26px;
+  width: 100%;
+  max-width: 1180px;
+}
+
+.card-wrapper {
+  padding: 6px 0;
+}
+
+.card-link {
+  display: block;
+  border-radius: 26px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.22);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 18px 30px rgba(0,0,0,0.18);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-link:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 40px rgba(0,0,0,0.24);
+}
 
 @keyframes popIn{
     from{
@@ -69,8 +141,14 @@ nav a:hover, nav a.active { color:#f5d76e; font-weight:600; }
   <a href="public/merch.html">Merchandise</a>
 </nav>
 
-    <div class="container swiper">
-        <div class="card-wrapper">
+    <div class="page-content">
+        <header class="hero">
+            <h1>The Princess Chronicles</h1>
+            <p>Step into a magical world where each Disney personality reveals the heroine you most closely match.</p>
+        </header>
+
+        <div class="container swiper">
+            <div class="card-wrapper">
             <ul class="card-list swiper-wrapper">
                 <li class="card-item swiper-slide">
                     <a href="public/princesses.html" class="card-link">
